@@ -13,7 +13,7 @@ public record VeiculoRequest(
         String cpf,
 
         @NotBlank
-        @Pattern(regexp = "[A-Z]{3}-?[0-9][A-Z0-9]{2}",
-        message = "Placa inválida")
+        @Pattern(regexp = "^[A-Z]{3}\\d{4}$|^[A-Z]{3}\\d[A-Z]\\d{2}$",
+                message = "Placa inválida")
         String placa
 ) {}
